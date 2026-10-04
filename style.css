@@ -1,0 +1,404 @@
+:root {
+    --bg-color: #0b0f19;
+    --card-bg: #131d31;
+    --text-color: #f1f5f9;
+    --text-muted: #94a3b8;
+    --primary: #f59e0b;
+    --primary-hover: #d97706;
+    --border: #1e293b;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    padding-bottom: 4rem;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Hero Section */
+.hero {
+    padding: 4rem 0 2rem 0;
+    text-align: center;
+}
+
+.badge {
+    background-color: rgba(245, 158, 11, 0.1);
+    color: var(--primary);
+    padding: 0.4rem 1.2rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.hero h1 {
+    font-size: 2.8rem;
+    margin: 1rem 0 0.5rem 0;
+    font-weight: 700;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.hero-desc {
+    color: var(--text-muted);
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+/* Barra de Beneficios Rápidos */
+.benefits-bar {
+    background-color: var(--card-bg);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 1.5rem 0;
+    margin: 2rem 0 3rem 0;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.benefit-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.benefit-item span {
+    font-size: 2rem;
+    background: rgba(245, 158, 11, 0.1);
+    padding: 0.5rem 0.8rem;
+    border-radius: 10px;
+}
+
+.benefit-item h4 {
+    font-size: 0.95rem;
+    margin-bottom: 0.2rem;
+}
+
+.benefit-item p {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+}
+
+/* Segmentos de Clientes */
+.client-segment {
+    margin-top: 4rem;
+}
+
+.segment-header {
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 1rem;
+}
+
+.segment-header h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.3rem;
+    color: #f8fafc;
+}
+
+.segment-header p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* Grid & Cards */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    border-color: var(--primary);
+    box-shadow: 0 10px 25px -5px rgba(245, 158, 11, 0.15);
+}
+
+/* Clase para tarjetas anchas */
+.card.card-wide {
+    grid-column: 1 / -1;
+}
+
+/* Estructura Horizontal para el Food Truck */
+.card.card-horizontal {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
+}
+
+.card.card-horizontal .card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1.5rem;
+    height: 100%;
+}
+
+/* Contenedor derecho con la imagen al 100% de ancho y su scroll vertical limpio */
+.card.card-horizontal .preview-container.scroll-tall {
+    height: 380px;
+    max-height: 380px;
+    border-bottom: none;
+    border-left: 1px solid var(--border);
+    overflow-y: auto;
+    overflow-x: hidden;
+    background: #0f172a;
+    position: relative;
+    display: block;
+}
+
+.card.card-horizontal .preview-container.scroll-tall img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* CONTENEDORES DE IMÁGENES ESTÁNDARES */
+.preview-container {
+    height: 240px;
+    background: #0f172a;
+    border-bottom: 1px solid var(--border);
+    overflow-y: auto;
+    position: relative;
+    display: flex;
+}
+
+.preview-container::-webkit-scrollbar {
+    width: 4px;
+}
+.preview-container::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 4px;
+}
+
+/* 1. Carta Estática */
+.preview-container.single-img {
+    height: 250px;
+    overflow-y: auto;
+    display: block;
+}
+
+.preview-container.single-img img {
+    width: 100%;
+    height: auto;
+    object-fit: unset;
+    display: block;
+}
+
+/* 2. Dos imágenes lado a lado */
+.preview-container.dual-img {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    background: var(--border);
+    overflow: hidden;
+}
+
+/* 3. Sistema Pro Ancho */
+.preview-container.pro-complex {
+    height: 300px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    background: var(--border);
+    overflow: hidden;
+}
+
+.preview-box, .pro-box {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #0f172a;
+}
+
+.preview-box img, .pro-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    transition: transform 0.3s ease;
+}
+
+.card:hover .preview-box img,
+.card:hover .pro-box img {
+    transform: scale(1.03);
+}
+
+/* Etiqueta distintiva */
+.img-tag {
+    position: absolute;
+    bottom: 6px;
+    left: 6px;
+    background: rgba(11, 15, 25, 0.9);
+    color: #f8fafc;
+    font-size: 0.65rem;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: 600;
+    backdrop-filter: blur(4px);
+}
+
+/* Contenido de la tarjeta estándar */
+.card-content {
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
+}
+
+.card-tag {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    width: fit-content;
+    margin-bottom: 0.75rem;
+    background: rgba(245, 158, 11, 0.15);
+    color: #fbbf24;
+}
+
+.card-tag.highlight {
+    background: rgba(236, 72, 153, 0.15);
+    color: #f472b6;
+}
+
+.card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.card p {
+    color: var(--text-muted);
+    font-size: 0.92rem;
+    margin-bottom: 1.2rem;
+}
+
+.benefit-list {
+    list-style: none;
+    font-size: 0.85rem;
+    color: #cbd5e1;
+    margin-bottom: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.card-links {
+    margin-top: auto;
+}
+
+.btn-demo {
+    display: block;
+    background-color: var(--primary);
+    color: #0b0f19;
+    padding: 0.65rem 1rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 600;
+    text-align: center;
+    transition: background 0.2s, transform 0.1s;
+}
+
+.btn-demo:hover {
+    background-color: var(--primary-hover);
+}
+
+.btn-demo:active {
+    transform: scale(0.98);
+}
+
+/* Contact Banner */
+.contact-banner {
+    margin-top: 5rem;
+    background: linear-gradient(135deg, #131d31, #1e293b);
+    border: 1px solid var(--primary);
+    border-radius: 16px;
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+.contact-box h2 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.contact-box p {
+    color: var(--text-muted);
+    max-width: 550px;
+    margin: 0 auto 1.5rem auto;
+}
+
+.btn-whatsapp {
+    display: inline-block;
+    background-color: #25d366;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: opacity 0.2s;
+}
+
+.btn-whatsapp:hover {
+    opacity: 0.9;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 4rem;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    border-top: 1px solid var(--border);
+    padding-top: 2rem;
+}
+
+/* Ajustes responsivos para celulares */
+@media (max-width: 768px) {
+    .card.card-horizontal {
+        grid-template-columns: 1fr;
+    }
+    .card.card-horizontal .preview-container.scroll-tall {
+        height: 260px;
+        max-height: 260px;
+        border-left: none;
+        border-top: 1px solid var(--border);
+    }
+}
