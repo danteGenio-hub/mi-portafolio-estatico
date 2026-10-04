@@ -19,4 +19,4 @@ El portafolio se divide en dos grandes enfoques técnicos:
 ## 💻 Tecnologías Utilizadas
 * **Frontend:** HTML5, CSS3, JavaScript (ES6+).
 * **Backend as a Service (BaaS):** Supabase (Autenticación y Base de Datos Relacional).
-* **Control de Versiones:** Git & GitHub.
+* **Control de Versiones:** Git & GitHub.# mi-portafolio-estatico
